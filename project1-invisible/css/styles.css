@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zen+Kaku+Gothic+New&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+     
+}
+
+
+/*IMAGEN FONDO*/
+.container{
+background-image: url(../img/howl.jpg);
+position: absolute;
+width: 100vw;
+height: 100vh;
+background-size: cover;
+background-repeat: no-repeat;
+ 
+}
+.container1{
+    background-image: url(../img/chi.jpg);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;   
+}
+.container2{
+    background-image: url(../img/totoro.jpg);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    
+}
+.container3{
+    background-image: url(../img/ponio.jpg.crdownload);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+/*CONTENIDOS FONDO BLANCO*/
+.white{
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 600px;
+    margin-left: 30%;
+    margin-top: 1%;
+    margin-right: 50%;
+    border-radius: 10%;
+    
+}
+
+/*FOTO PERFIL*/
+.profile{
+margin-left: 150px;
+padding-top: 50px;
+}
+/*TEXTO */
+.title{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    
+    font-weight: bold;
+    color: rgb(21, 107, 21);
+    padding-left: 110px;
+}
+.title1{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: bold;
+    color: rgb(153, 50, 13);
+    padding-left: 150px;
+
+}
+.title2{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: bold;
+    color: rgb(112, 112, 112);
+    padding-left: 100px;
+}
+.title3{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: bold;
+    color: rgb(253, 47, 81);
+    padding-top:1% ;
+    padding-left: 200px;
+}
+.long-text{
+    padding: 5%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+  
+    text-align: justify;
+}
+
+i{
+    padding-left:15%;
+    font-size: 24px;
+    opacity: 50%;
+}
+i:hover{
+    color: rgb(190, 190, 190);
+    cursor: pointer
+}
+.button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    color: rgb(29, 29, 29);
+    display: block;
+    padding-left: 70%;
+    padding-top: 4%;
+    text-decoration: none;
+
+}
+.button:hover{
+    color: rgb(182, 67, 67);
+    cursor: pointer;
+}
+
+/*
+iconasS
+<i class="fas fa-fire"></i> fire
+<i class="fas fa-magic"></i> wand
+<i class="fas fa-hat-wizard"></i> hat
+<i class="fas fa-scarecrow"></i> scarecrow
+*/

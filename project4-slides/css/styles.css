@@ -1,0 +1,182 @@
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+/*CONTENIDOS*/
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: whitesmoke;
+}
+/*CARTEL INICIO*/
+
+.principal {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.principal::after {
+    content: '';
+    width: 250%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #000, #000);
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: principalAnim 2.5s linear forwards;
+}
+.principal h1 {
+    color: #5273dd;
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    margin-bottom: 100px;
+    border-top: 5px solid #5273dd;
+    border-bottom: 5px solid #5273dd;
+    text-shadow: 6px 3px 2px #3d3a3a;
+}
+
+.principal button {
+    outline: none;
+    width: 200px;
+    padding: 10px;
+    background: linear-gradient(to right, #202020, #3c559c);
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    transform: perspective(500px) rotateY(-15deg);
+    text-shadow: 6px 3px 2px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    animation: buttonAnim 1s 2.5s backwards;
+    transition: all .5s;
+    overflow: hidden;
+}
+.principal button::before {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, white, transparent);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: skewX(-30deg);
+    transition: left .5s;
+}
+.principal button:hover {
+    transform: perspective(500px) rotateY(15deg);
+    text-shadow: -6px 3px 2px rgba(0, 0, 0, .4);
+    background: linear-gradient(to left, #202020, #3c559c);
+}
+.principal button:hover::before {
+    left: 100%;
+}
+
+
+
+/*PAÍSES IMAGEN FONDO*/
+.country {
+    width: 100%;
+    height: 100vh;
+}
+.country:nth-child(1) {
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(../img/madrid.jpg) center no-repeat;
+    background-size: cover;
+}
+.country:nth-child(2) {
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(../img/lisboa.jpg) center no-repeat;
+    background-size: cover;
+}
+.country:nth-child(3) {
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(../img/berlin.jpg) center no-repeat;
+    background-size: cover;
+}
+.country:nth-child(4) {
+    background: linear-gradient(100deg, rgba(38, 38, 38, 1), rgba(38, 38, 38, .8), transparent), url(../img/austria.jpg) center no-repeat;
+    background-size: cover;
+}
+
+
+
+/*TEXTO CONTENIDO*/
+.dep{
+    width: 50%;
+    position: relative;
+    top: 35%;
+    left: 5%;
+
+}
+.dep h3{
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+}
+.dep p{
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+}
+/*BOTÓN LEER MÁS*/
+.dep button {
+    width: 25%;
+    padding: 1% 1% 0 0;
+    margin-top: 2%;
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+}
+i {
+    margin-left: 8px;
+}
+
+/* SLIDES EN MOVIMIENTO*/
+.slides {
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+.slidemove {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    position: relative;
+}
+/*ANIMACIONES*/
+@keyframes principalAnim {
+    0%{right: 0;}
+    100%{right: -250%;}
+   
+}
+@keyframes buttonAnim {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes slidemove {
+    0%{left: 0;}
+    10%{left: -50;}
+    20%{left: -100%;}
+    30%{left: -200%;}
+    40%{left: -250%;}
+    45%{left: -300%;}
+    50%{left: -300%;}
+    60%{left: -250%;}
+    70%{left: -200%;}
+    75%{left: -100%;}
+    85%{left: -50%;}
+    90%{left: 0;}
+}
+
+

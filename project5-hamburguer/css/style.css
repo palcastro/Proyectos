@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.full-screen{
+    /*color: white;*/
+    font-family: 'Bebas Neue', cursive;
+}
+
+/*BANNER*/
+.banner{
+    width: 100%;
+    height: 100vh;
+    background: url(../img/fondo.png) center no-repeat;
+    background-size: cover;   
+}
+.logo {
+    height: auto;
+    width: 100px;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    z-index: 100;
+}
+.logo img {
+    width: 100%;
+}
+
+/*BOTON EXPLORE ME - copiado*/
+.boton-centro{ /*btn-wrapper*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+}
+.banner-boton{ /*banner-btn*/
+    width: 350px;
+    height: 100px;
+    background: linear-gradient(#faadad, #ce4f6f);
+    border: none;
+    outline: none;
+    font-family: 'Slabo 27px', serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 10px 10px rgb(105, 105, 105);
+    cursor: pointer;
+    transform: rotateX(70deg) rotateZ(30deg);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.banner-boton:hover{
+    transform: rotateX(30deg) rotateZ(0deg);
+}
+.banner-boton::before { 
+    content: '';
+    width: 100%;
+    height: 15px;
+    background-color: #69152e;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+.banner-boton::after {
+    content: '';
+    width: 15px;
+    height: 100;
+    background-color: #939595;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+}
+
+/*NAV-CONTAINER = nav-wrapper*/
+/*1*/
+.menu-burguer{ /*hamburger-menu*/
+    width: 45px;
+    height: 35px;
+    position: fixed;
+    top: 40px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 100;
+}
+.line {
+    width: inherit;
+    height: 5px;
+    background-color:rgb(17, 110, 138);
+    border-radius: 25px;
+    transform-origin: right;
+    transition: transform .5s;
+}
+.line-2 {
+    height: 3px;
+}
+
+/*2*/
+.menu-opciones{ /*top-nav*/
+    height: 15vh;
+    width: 100%;
+    /*background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url() no-repeat 50% 0;
+    background-size: cover;*/
+    position: fixed;
+    top: -15vh;
+    z-index: 50;
+    transition: top .4s;
+}
+.lista-menu{ /*nav-list*/
+    list-style: none;
+    width: 80%;
+    margin: auto;
+    height: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.lista-menu li{ /*faltaba*/
+    perspective: 500px;
+}
+.link{ /*nav-link*/
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Bebas Neue', cursive;
+    text-transform: uppercase;
+    color: rgb(17, 110, 138);
+    background-color: rgba(192, 189, 189, 0.363);
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    display: block;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: top;
+    transition: transform .3s;
+}
+.link:hover {
+    transform: rotateX(90deg);
+}
+.link::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    background-color: rgba(0, 0, 0, 0);
+    padding: inherit;
+    color: #16c3cf;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+
+/*3*/
+.menu-iconos{ /*bottom-nav*/
+    width: 100%;
+    height: 85vh;
+    background: linear-gradient(rgba(235, 235, 235, 0.87), rgba(236, 234, 234, 0.911)), url(../img/texture.jpg) no-repeat 50% -15vh;
+    background-size: cover;
+    position: fixed;
+    bottom: -85vh;
+    transition: bottom .4s;
+}
+.iconos{ /*icons*/ /*copiado de xabi y de la pizarra*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+.icono-item { /*qué coño es esto*/
+    perspective: 1000px;
+}
+.icono-link{ /*icon-link*/
+    width: 200px;
+    height: 200px;
+    border: 8px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.icono-link:hover {
+    transform: rotateY(35deg);
+}
+.icono-link::before {
+    content: '';
+    height: 25px;
+    width: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+}
+.icono-link::after {
+    content: '';
+    height: 25px;
+    width: 5px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+.icono-link i {
+    color: #fff;
+    font-size: 60px;
+    width: 150px;
+    height: 150px;
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #fff;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    position: relative;
+    transition: all .5s;
+}
+.icono-link:hover i{
+    transform: rotateY(-70deg);
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+}
+.icono-link i::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -130%;
+    right: -130%;
+    border-radius: 100%;
+    z-index: -1;
+    transition: all .3s;
+}
+/*colores de ls iconos*/
+.icon-item:nth-child(1) .icono-link i::after{ background-color: #5d7bbbd8;}
+.icon-item:nth-child(2) .icono-link i::after{ background-color: #ca504a;}
+.icon-item:nth-child(3) .icono-link i::after{ background-color: #82bbe6;}
+.icon-item:nth-child(4) .icono-link i::after{ background-color: #ca5b4c;}
+.icono-link:hover i::after{ /*lo activa todo*/
+    top: 0;
+    right: 0;
+    border-radius: 0;
+}
+
+/*JS - lo junto aquí porque estaba repartido entre el css*/
+.change .line-1 {
+    transform: rotateZ(-45deg);
+}
+.change .line-2 {
+    transform: translate(5px, 20px);
+}
+.change .line-3 {
+    transform: rotateZ(45deg);
+}
+.change .menu-opciones {
+    top: 0;
+}
+.change .menu-iconos{
+    bottom: 0;
+}
+
+/*MEDIAS QUERIES*/
+@media(max-witdh: 1600px){
+    .iconos{width: 80%;}
+}
+@media(max-width: 1200px) {
+    .menu-opciones {background: #010101;}
+    .lista-menu {justify-content: center;}
+    .link {font-size: 25px;}
+    .iconos{
+        width: 70%;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+    .icono-link{
+        width: 180px;
+        height: 180px;
+        margin: 20px;
+    }
+    .icono-link i{
+        width: 130px;
+        height: 130px;
+        margin: 40px;
+    }
+}
+@media(max-width: 900px) {
+    .banner-boton{
+        width: 300px;
+        height: 80px;
+        font-size: 30px;
+    }
+    .menu-opciones{
+        height: 25vh;
+        top: -25vh;
+    }
+    .lista-menu {
+        width: 70%;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .link {margin: 3px 0;}
+    .iconos{width: 95%;}
+    .icono-link{
+        width: 90px;
+        height: 90px;
+        font-size: 30px;
+    }
+}
+@media(max-width: 750px) {
+    .lista-menu {width: 60%;}
+    .icono-link{
+        width: 120px;
+        height: 120px;
+    }
+    .icono-link li{
+        width: 70px;
+        height: 70px;
+    }
+}
+@media(max-width: 550px) {
+    .banner-boton{
+        width: 280px;
+        height: 70px;
+        font-size: 25px;
+    }
+    .logo {
+        width: 70px;
+        height: 70px;
+        left: 30px;
+    }
+    .menu-opciones {
+        height: 30vh;
+        top: -30vh;
+    }
+    .menu-iconos{
+        height: 70vh;
+        top: -70vh;
+    }
+    .icono-link{
+        width: 110px;
+        height: 110px;
+    }
+    .icono-link li{
+        width: 60px;
+        height: 60px;
+    }
+}
+@media(max-width: 450px) {
+    .banner-boton{
+        width: 260px;
+        height: 60px;
+    }
+    .menu-opciones {
+        height: 35vh;
+        top: -35vh;
+    }
+    .lista-menu{width: 50%;}
+    .menu-iconos{
+        height: 65vh;
+        top: -65vh;
+    }
+}
